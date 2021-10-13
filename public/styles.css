@@ -1,0 +1,175 @@
+/* color 1 linear gradient: f6d365; color 2 linear gradient: fda085; color h1 header: white; color input text: black; color add todo/select/trash: fda085; color select text: fda085
+color completed btn: rgb( 11, 212, 162 ) */
+
+:root {
+  --linear-gradient-1: #f6d365;
+  --linear-gradient-2: #fda085;
+  --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover: white;
+  --inputtxt-litxt: black;
+  --inputadd-selectafterbg-trashbg-inputaddbghover: #ff6f47;
+  --completebg: rgb(11, 212, 162);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+    120deg,
+    var(--linear-gradient-1) 0%,
+    var(--linear-gradient-2) 100%
+  );
+  color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+.btn {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.div-new-todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+}
+
+.form-new-todo {
+  display: flex;
+}
+
+.input-new-todo {
+  font-size: 2rem;
+  border: 0;
+  padding: 0.5rem;
+}
+
+.btn-new-todo {
+  background-color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+  color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
+
+  transition: all 0.3s ease; /* there's a bug with chrome and transitions when you include a form element. The transitions fire on page load! */
+}
+
+.btn-new-todo:hover {
+  background-color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
+  color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+}
+
+.divselect-new-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.select-new-todo {
+  height: 85%;
+  border: 0;
+  margin-left: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
+  color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
+}
+
+.select-new-todo:focus {
+  outline: none;
+}
+
+.divselect-new-todo:after {
+  content: "\25BC";
+  position: absolute;
+  top: 7.5%;
+  right: 0;
+  height: 85%;
+  width: 25%;
+  padding: 0.8rem 1rem;
+  background-color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
+  cursor: pointer;
+  pointer-events: none; /* if no pointer events were specified, we couldn't "click" on the arrow */
+}
+
+.all-todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  color: var(--inputtxt-litxt);
+}
+
+.all-todos li {
+  background-color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+  padding: 0.5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.all-todos-li-checked {
+  text-decoration: line-through;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.3rem;
+  width: 30%;
+  transition: all 0.3s ease;
+}
+
+.todo-checked {
+  opacity: 0.5;
+}
+
+.check {
+  background-color: var(--completebg);
+  color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.trash {
+  background-color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
+  color: var(
+    --header-complete-trash-inputbg-inputaddbg-selectbg-libg-inputaddhover
+  );
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+}
