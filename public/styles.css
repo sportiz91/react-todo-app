@@ -40,8 +40,39 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 2rem;
   letter-spacing: 0.3rem;
+}
+@media (max-width: 771px) {
+  header {
+    margin-bottom: 2.5rem;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 320px) {
+  header {
+    font-size: 0.8rem;
+  }
+}
+
+.App {
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -51,16 +82,44 @@ header {
   padding: 0.4rem;
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  .btn {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 400px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
 
 .div-new-todo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 70%;
   min-height: 20vh;
+}
+@media (max-width: 771px) {
+  .div-new-todo {
+    margin-bottom: 2rem;
+  }
 }
 
 .form-new-todo {
+  display: flex;
+}
+@media (max-width: 809px) {
+  .form-new-todo {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+  }
+}
+
+.input-btn-new-todo {
   display: flex;
 }
 
@@ -68,6 +127,16 @@ header {
   font-size: 2rem;
   border: 0;
   padding: 0.5rem;
+}
+@media (max-width: 809px) {
+  .input-new-todo {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 320px) {
+  .input-new-todo {
+    font-size: 0.9rem;
+  }
 }
 
 .btn-new-todo {
@@ -100,6 +169,11 @@ header {
   padding: 1rem 3rem 1rem 1rem;
   color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
 }
+@media (max-width: 600px) {
+  .select-new-todo {
+    padding: 0.55rem 3rem 0.55rem 1rem;
+  }
+}
 
 .select-new-todo:focus {
   outline: none;
@@ -117,12 +191,24 @@ header {
   cursor: pointer;
   pointer-events: none; /* if no pointer events were specified, we couldn't "click" on the arrow */
 }
+@media (max-width: 809px) {
+  .divselect-new-todo:after {
+    top: 0;
+    height: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .divselect-new-todo:after {
+    padding: 0.35rem 1rem;
+  }
+}
 
 .all-todos {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   list-style-type: none;
   color: var(--inputtxt-litxt);
 }
@@ -138,6 +224,11 @@ header {
   font-size: 1.4rem;
   transition: all 0.3s ease;
 }
+@media (max-width: 600px) {
+  .all-todos li {
+    font-size: 1rem;
+  }
+}
 
 .all-todos-li-checked {
   text-decoration: line-through;
@@ -149,7 +240,13 @@ header {
   justify-content: space-between;
   padding: 0.3rem;
   width: 30%;
+  min-width: 290px;
   transition: all 0.3s ease;
+}
+@media (max-width: 320px) {
+  .todo {
+    min-width: 180px;
+  }
 }
 
 .todo-checked {
@@ -164,6 +261,11 @@ header {
   font-size: 1rem;
   padding: 0.75rem 1rem;
 }
+@media (max-width: 600px) {
+  .check {
+    padding: 0.25rem 1rem;
+  }
+}
 
 .trash {
   background-color: var(--inputadd-selectafterbg-trashbg-inputaddbghover);
@@ -172,4 +274,9 @@ header {
   );
   font-size: 1rem;
   padding: 0.75rem 1rem;
+}
+@media (max-width: 600px) {
+  .trash {
+    padding: 0.25rem 1rem;
+  }
 }

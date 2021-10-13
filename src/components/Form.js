@@ -28,16 +28,18 @@ const Form = ({ inputText, setInputText, setTodoArray, setStatus, status }) => {
   return (
     <div className="div-new-todo">
       <form onSubmit={handleSubmit} className="form-new-todo">
-        <input
-          type="text"
-          onChange={handleChange}
-          className="input-new-todo"
-          value={inputText}
-        />
+        <div className="input-btn-new-todo">
+          <input
+            type="text"
+            onChange={handleChange}
+            className="input-new-todo"
+            value={inputText}
+          />
 
-        <button className="btn btn-new-todo" type="submit">
-          <i className="fas fa-plus-square fa-lg"></i>
-        </button>
+          <button className="btn btn-new-todo" type="submit">
+            <i className="fas fa-plus-square fa-lg"></i>
+          </button>
+        </div>
 
         <div className="divselect-new-todo">
           <select
