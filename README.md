@@ -27,6 +27,7 @@ This todo-app was possible thanks to Ed from Dev Ed YouTube Channel.
 1. React Props
 1. React Hooks: useState & useEffect
 1. React re-render of components
+1. React Transition Group
 1. Basic Git usage: `git init`, `git add`, `git commit`, `git branch`, `git merge`, `git push`, `git pull`.
 1. Basic Git usage: `.gitignore`.
 1. Markdown Syntax and `README.md`.
