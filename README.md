@@ -1,6 +1,6 @@
 # React Todo App
 
-This is my first React App built in order to practice my React skills. Done with `create-react-app`. <br />
+This is my first React App built in order to practice my React skills. Done with `create-react-app`. An example of this App can be found at: https://react-todoapp-practice.herokuapp.com/ <br />
 
 # Table of Contents
 
