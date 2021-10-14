@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -61,18 +62,27 @@ function App() {
         status={status}
       />
 
-      {filteredArray.map((todo, index) => {
-        return (
-          <TodoList
-            name={todo.name}
-            key={todo.id}
-            id={todo.id}
-            todo={todo}
-            todoArray={todoArray}
-            setTodoArray={setTodoArray}
-          />
-        );
-      })}
+      <TransitionGroup className="transition-group">
+        {filteredArray.map((todo, index) => {
+          return (
+            <CSSTransition
+              classNames="fall"
+              timeout={300}
+              in={true}
+              key={todo.id}
+            >
+              <TodoList
+                name={todo.name}
+                key={todo.id}
+                id={todo.id}
+                todo={todo}
+                todoArray={todoArray}
+                setTodoArray={setTodoArray}
+              />
+            </CSSTransition>
+          );
+        })}
+      </TransitionGroup>
     </div>
   );
 }

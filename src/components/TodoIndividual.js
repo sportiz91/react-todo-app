@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 const TodoIndividual = ({ name, id, todo, todoArray, setTodoArray }) => {
+  //Handle functions
   function handleCheck() {
     setTodoArray(
       todoArray.map((item) => {
@@ -21,8 +23,9 @@ const TodoIndividual = ({ name, id, todo, todoArray, setTodoArray }) => {
     );
   }
 
+  //HTML
   return (
-    <div className={`todo ${todo.completed && "todo-checked"}`}>
+    <div className={`todo ${todo.completed ? "todo-checked" : ""}`}>
       <li className={todo.completed && "all-todos-li-checked"}>{name}</li>
       <button onClick={handleCheck} className="btn check">
         <i className="fas fa-check"></i>

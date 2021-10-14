@@ -1,5 +1,6 @@
 import React from "react";
 import TodoIndividual from "./TodoIndividual";
+import { CSSTransition } from "react-transition-group";
 
 const TodoList = ({ name, id, todo, todoArray, setTodoArray }) => {
   return (

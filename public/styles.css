@@ -203,6 +203,10 @@ header {
   }
 }
 
+.transition-group {
+  width: 100%;
+}
+
 .all-todos {
   display: flex;
   flex-direction: column;
@@ -248,6 +252,31 @@ header {
     min-width: 180px;
   }
 }
+
+.fall-enter {
+  opacity: 0;
+}
+
+.fall-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fall-exit {
+  opacity: 1;
+  transform: translateY(0) rotateZ(0deg);
+}
+
+.fall-exit-active {
+  opacity: 0;
+  transform: translateY(10rem) rotateZ(20deg);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* .fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+} */
 
 .todo-checked {
   opacity: 0.5;
